@@ -1,0 +1,12 @@
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a.active {
+    background: #10589f;
+}
+
+.nav-link {
+    color: white;
+}
