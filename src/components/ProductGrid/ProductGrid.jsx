@@ -3,16 +3,14 @@ import ProductCard from "../ProductCard/ProductCard";
 
 const ProductGrid = ({ type, items }) => {
   return (
-    <div
-      style={{ border: "1px solid thistle", padding: 15, margin: "40px 20px" }}
-    >
+    <div>
       <Typography variant="h5">{type}</Typography>
       <div
         style={{
           display: "flex",
           justifyContent: "space-evenly",
           flexWrap: "wrap",
-          gap: "10px",
+          gap: "15px",
         }}
       >
         {items.map((item) => {

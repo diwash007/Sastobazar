@@ -13,8 +13,9 @@ const ProductCard = ({ item }) => {
       <Card
         sx={{
           display: "inline-block",
+          padding: "10px",
           margin: "10px",
-          width: "242px",
+          width: "300px",
           transition: "transform 0.5s",
           ":hover": { boxShadow: 10, transform: "scale(1.05)" },
         }}
@@ -41,7 +42,7 @@ const ProductCard = ({ item }) => {
             >
               {item.title}
             </Typography>
-            <Typography align="right">${item.price}</Typography>
+            <Typography align="right" color="green">${item.price}</Typography>
           </div>
           <Rating size="small" value={item.rating.rate} readOnly />
           <Typography component="span" variant="subtitle2">

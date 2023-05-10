@@ -29,7 +29,7 @@ const Navbar = () => {
   };
 
   return (
-    <AppBar position="static">
+    <AppBar position="static" sx={{ backgroundColor: "#333D41" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
@@ -89,9 +89,16 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            ART BAZAR
+            SASTO BAZAR
           </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
+          <Box
+            sx={{
+              flexGrow: 1,
+              justifyContent: "center",
+              gap: 3,
+              display: { xs: "none", md: "flex" },
+            }}
+          >
             <NavLink to="/">
               <Button
                 key="Home"

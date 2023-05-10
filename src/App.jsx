@@ -13,8 +13,8 @@ function App() {
       <Box
         display="flex"
         justifyContent="center"
-        alignItems="center"
-        minHeight="100vh"
+        alignItems="flex-start"
+        padding="50px"
       >
         <Routes>
           <Route element={<Home />} path="/" />
