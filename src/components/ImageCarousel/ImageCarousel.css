@@ -1,0 +1,30 @@
+.carousel {
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.carousel-img {
+    width: 100%;
+}
+
+.images::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.images {
+    display: flex;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+.carousel-btn {
+    height: 50px;
+}
+
+@media only screen and (max-width:768px) {
+    .carousel-btn {
+        display: none !important;
+    }
+}

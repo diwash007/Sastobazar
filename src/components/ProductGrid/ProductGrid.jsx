@@ -1,10 +1,10 @@
 import { Typography, Box } from "@mui/material";
 import ProductCard from "../ProductCard/ProductCard";
 
-const ProductGrid = ({ type, items }) => {
+const ProductGrid = ({ type: heading, items }) => {
   return (
     <div>
-      <Typography variant="h5">{type}</Typography>
+      <Typography variant="h5">{heading}</Typography>
       <div
         style={{
           display: "flex",

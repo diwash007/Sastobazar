@@ -12,7 +12,7 @@ const Category = () => {
   return !data ? (
     <CircularProgress />
   ) : (
-    <ProductGrid type={category} items={data} />
+    <ProductGrid heading={category} items={data} />
   );
 };
 
