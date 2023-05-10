@@ -7,39 +7,25 @@ import Typography from "@mui/material/Typography";
 import Menu from "@mui/material/Menu";
 import MenuIcon from "@mui/icons-material/Menu";
 import Container from "@mui/material/Container";
-import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
-import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import { ShoppingCart } from "@mui/icons-material";
 import { Link, NavLink } from "react-router-dom";
 
 import "./Navbar.css";
-// import { SizedBox } from "../../utils/functions";
 import { Badge } from "@mui/material";
-// import AuthContext from "../../context/AuthContext";
 
-const pages = ["smartphones", "laptops", "fragrances", "skincare", "groceries"];
+const pages = ["electronics", "jewelery", "men's clothing", "women's clothing"];
 
 const Navbar = () => {
-//   const { user, logout } = React.useContext(AuthContext);
-
   const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
 
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
   };
 
   return (
@@ -52,7 +38,7 @@ const Navbar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
-            ART BAZAR
+            SASTO BAZAR
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -136,62 +122,16 @@ const Navbar = () => {
               </NavLink>
             ))}
           </Box>
-          {/* {!user ? (
-            <>
-              <Box>
-                <Link to="/login" className="nav-link">
-                  Login
-                </Link>
-              </Box>
-              <SizedBox width="15px" />
-              <Box>
-                <Link to="/register" className="nav-link">
-                  Register
-                </Link>
-              </Box>
-              <SizedBox width="15px" />
-            </>
-          ) : (
-            <>
-              <Box>
-                <Link to="/cart">
-                  <IconButton>
-                    <Badge badgeContent={1} color="error">
-                      <ShoppingCart style={{ color: "white" }} />
-                    </Badge>
-                  </IconButton>
-                </Link>
-              </Box>
-              <SizedBox width="15px" />
-              <Box sx={{ flexGrow: 0 }}>
-                <Tooltip title="Open settings">
-                  <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                    <Avatar>{user.username[0]}</Avatar>
-                  </IconButton>
-                </Tooltip>
-                <Menu
-                  sx={{ mt: "45px" }}
-                  id="menu-appbar"
-                  anchorEl={anchorElUser}
-                  anchorOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  keepMounted
-                  transformOrigin={{
-                    vertical: "top",
-                    horizontal: "right",
-                  }}
-                  open={Boolean(anchorElUser)}
-                  onClose={handleCloseUserMenu}
-                >
-                  <MenuItem onClick={logout}>
-                    <Typography textAlign="center">Logout</Typography>
-                  </MenuItem>
-                </Menu>
-              </Box>
-            </>
-          )} */}
+
+          <Box>
+            <Link to="/cart">
+              <IconButton>
+                <Badge badgeContent={1} color="error">
+                  <ShoppingCart style={{ color: "white" }} />
+                </Badge>
+              </IconButton>
+            </Link>
+          </Box>
         </Toolbar>
       </Container>
     </AppBar>

@@ -3,16 +3,26 @@ import Home from "./pages/Home";
 import Product from "./pages/Product";
 import Cart from "./pages/Cart";
 import Navbar from "./components/Navbar/Navbar";
+import Category from "./pages/Category";
+import { Box } from "@mui/material";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route element={<Home />} path="/" />
-        <Route element={<Product />} path="/product" />
-        <Route element={<Cart />} path="/cart" />
-      </Routes>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+      >
+        <Routes>
+          <Route element={<Home />} path="/" />
+          <Route element={<Product />} path="/product" />
+          <Route element={<Cart />} path="/cart" />
+          <Route element={<Category />} path="/category/:category" />
+        </Routes>
+      </Box>
     </BrowserRouter>
   );
 }

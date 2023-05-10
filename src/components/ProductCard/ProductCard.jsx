@@ -21,7 +21,7 @@ const ProductCard = ({ item }) => {
       >
         <CardMedia
           component="img"
-          image={item.thumbnail}
+          image={item.image}
           sx={{ height: 150 }}
           alt="p"
         />
@@ -43,9 +43,9 @@ const ProductCard = ({ item }) => {
             </Typography>
             <Typography align="right">${item.price}</Typography>
           </div>
-          <Rating size="small" value={item.rating} readOnly />
+          <Rating size="small" value={item.rating.rate} readOnly />
           <Typography component="span" variant="subtitle2">
-            ({item.stock})
+            ({item.rating.count})
           </Typography>
         </CardContent>
       </Card>
