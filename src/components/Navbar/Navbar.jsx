@@ -75,7 +75,7 @@ const Navbar = () => {
                 </MenuItem>
               </NavLink>
               {pages.map((page) => (
-                <NavLink to={"/category/" + page.replace(" ", "_")} key={page}>
+                <NavLink to={"/category/" + page} key={page}>
                   <MenuItem onClick={handleCloseNavMenu}>
                     <Typography textAlign="center">{page}</Typography>
                   </MenuItem>
@@ -107,7 +107,7 @@ const Navbar = () => {
               </Button>
             </NavLink>
             {pages.map((page) => (
-              <NavLink to={"/category/" + page.replace(" ", "_")} key={page}>
+              <NavLink to={"/category/" + page} key={page}>
                 <Button
                   onClick={handleCloseNavMenu}
                   sx={{
