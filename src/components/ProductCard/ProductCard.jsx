@@ -42,12 +42,22 @@ const ProductCard = ({ item }) => {
             >
               {item.title}
             </Typography>
-            <Typography align="right" color="green">${item.price}</Typography>
+            <Typography align="right" color="green">
+              ${item.price}
+            </Typography>
           </div>
-          <Rating size="small" value={item.rating.rate} readOnly />
-          <Typography component="span" variant="subtitle2">
-            ({item.rating.count})
-          </Typography>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Rating size="small" value={item.rating.rate} readOnly />
+            <Typography component="span" variant="subtitle2">
+              ({item.rating.count})
+            </Typography>
+          </div>
         </CardContent>
       </Card>
     </Link>

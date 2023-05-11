@@ -5,6 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { fetcher } from "../utils/functions";
 import { useSetCart } from "../contexts/CartContext";
+import { ArrowBack } from "@mui/icons-material";
 
 const Product = () => {
   let { id } = useParams();
@@ -35,6 +36,9 @@ const Product = () => {
         <CircularProgress />
       ) : (
         <>
+          <Button onClick={() => navigate(-1)}>
+            <ArrowBack />
+          </Button>
           <div
             width="100%"
             style={{
