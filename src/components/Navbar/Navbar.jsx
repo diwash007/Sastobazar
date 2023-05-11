@@ -14,11 +14,13 @@ import { Link, NavLink } from "react-router-dom";
 
 import "./Navbar.css";
 import { Badge } from "@mui/material";
+import { useCart } from "../../contexts/CartContext";
 
 const pages = ["electronics", "jewelery", "men's clothing", "women's clothing"];
 
 const Navbar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const cart = useCart();
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -133,7 +135,7 @@ const Navbar = () => {
           <Box>
             <Link to="/cart">
               <IconButton>
-                <Badge badgeContent={1} color="error">
+                <Badge badgeContent={cart.length} color="error">
                   <ShoppingCart style={{ color: "white" }} />
                 </Badge>
               </IconButton>

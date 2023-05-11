@@ -4,55 +4,30 @@ import { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BASE_URL } from "../utils/constants";
 import { fetcher } from "../utils/functions";
-
-// import AuthContext from "../../context/AuthContext";
+import { useSetCart } from "../contexts/CartContext";
 
 const Product = () => {
   let { id } = useParams();
   const navigate = useNavigate();
-  // const { user, cart, setCart } = useContext(AuthContext);
+  const setCart = useSetCart();
   const { data } = useSWR(BASE_URL + "products/" + id, fetcher);
   const product = data;
   const [quantity, setQuantity] = useState(1);
+  const [size, setSize] = useState("S");
 
-  // const getProduct = async (id) => {
-  //   try {
-  //     const response = await axios.get(BASE_URL + "products/" + id);
-  //     setProduct(response.data);
-  //     setSpinner(false);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   getProduct(id);
-  // }, [id]);
-
-  // const handleSubmit = async (e) => {
-  //   if (user) {
-  //     e.preventDefault();
-  //     try {
-  //       const response = await axios.put(BASE_URL + "carts/" + cart.id, {
-  //         products: [
-  //           {
-  //             id: id,
-  //             quantity: quantity,
-  //           },
-  //         ],
-  //       });
-  //       setCart(response.data);
-  //       navigate("/cart");
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  // };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setCart((prev) => [
+      ...prev,
+      { ...product, quantity: quantity, size: size },
+    ]);
+    navigate("/cart");
+  };
 
   return (
     <div
       style={{
-        width: "500px",
+        maxWidth: "500px",
         fontFamily: '"Roboto","Helvetica","Arial",sans-serif',
       }}
     >
@@ -96,11 +71,15 @@ const Product = () => {
           >
             <div>
               Size:{" "}
-              <select>
-                <option value="m">S</option>
-                <option value="m">M</option>
-                <option value="m">L</option>
-                <option value="m">XL</option>
+              <select
+                onChange={(e) => {
+                  setSize(e.target.value);
+                }}
+              >
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
               </select>
             </div>
             <div>
@@ -110,14 +89,14 @@ const Product = () => {
                 name="quantity"
                 min="1"
                 max="50"
-                value={quantity}
+                value={isNaN(quantity) ? 1 : quantity}
                 onChange={(e) => {
-                  setQuantity(e.target.value);
+                  setQuantity(parseInt(e.target.value));
                 }}
                 required
               />
             </div>
-            <Button type="submit" variant="contained">
+            <Button type="submit" variant="contained" onClick={handleSubmit}>
               Add to Cart
             </Button>
           </form>

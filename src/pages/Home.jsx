@@ -11,7 +11,7 @@ function Home() {
   return !data ? (
     <CircularProgress />
   ) : (
-    <ProductGrid heading="Browse all items" items={data} />
+    <ProductGrid heading="All Products" items={data} />
   );
 }
 
