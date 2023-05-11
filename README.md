@@ -1,6 +1,7 @@
 <body>
-  <a href="https://sastobazar.netlify.app/"><h1>SASTO BAZAR</h1></a>
-  <p>A simple E-Commerce web application
+  <h1>SASTO BAZAR</h1>
+  <p>A simple E-Commerce web application</p>
+  <p><a href="https://sastobazar.netlify.app/">
 </p>
   <h2>Table of Contents</h2>
   <ul>

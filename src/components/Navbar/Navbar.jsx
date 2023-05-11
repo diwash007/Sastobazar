@@ -97,7 +97,9 @@ const Navbar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
           >
-            SASTO BAZAR
+            <Link to="/" style={{ color: "white" }}>
+              SASTO BAZAR
+            </Link>
           </Typography>
           <Box
             sx={{
